@@ -6,13 +6,14 @@ from pprint import pprint
 
 # Configure API key authorization: Apikey
 configuration = cloudmersive_nlp_api_client.Configuration()
-configuration.api_key['Apikey'] = 'YOUR_API_KEY'
+configuration.api_key['Apikey'] = 'YOUR-API-KEY-HERE'
 
 
 
 # create an instance of the API class
 api_instance = cloudmersive_nlp_api_client.LanguageTranslationApi(cloudmersive_nlp_api_client.ApiClient(configuration))
 input = cloudmersive_nlp_api_client.LanguageTranslationRequest() # LanguageTranslationRequest | Input translation request
+input.text_to_translate = "Am Morgen war Armin Laschet in seiner Heimatstadt Aachen wählen gegangen."
 
 try:
     # Translate German to English text with Deep Learning AI
