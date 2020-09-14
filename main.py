@@ -1,22 +1,22 @@
 from __future__ import print_function
 import time
-import cloudmersive_convert_api_client
-from cloudmersive_convert_api_client.rest import ApiException
+import cloudmersive_nlp_api_client
+from cloudmersive_nlp_api_client.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: Apikey
-configuration = cloudmersive_convert_api_client.Configuration()
+configuration = cloudmersive_nlp_api_client.Configuration()
 configuration.api_key['Apikey'] = 'YOUR_API_KEY'
 
 
 
 # create an instance of the API class
-api_instance = cloudmersive_convert_api_client.ConvertDocumentApi(cloudmersive_convert_api_client.ApiClient(configuration))
-input_file = 'C:\\temp\\input.xlsx' # file | Input file to perform the operation on.
+api_instance = cloudmersive_nlp_api_client.LanguageTranslationApi(cloudmersive_nlp_api_client.ApiClient(configuration))
+input = cloudmersive_nlp_api_client.LanguageTranslationRequest() # LanguageTranslationRequest | Input translation request
 
 try:
-    # Convert Excel XLSX Spreadsheet to PDF
-    api_response = api_instance.convert_document_xlsx_to_pdf(input_file)
+    # Translate German to English text with Deep Learning AI
+    api_response = api_instance.language_translation_translate_deu_to_eng(input)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConvertDocumentApi->convert_document_xlsx_to_pdf: %s\n" % e)
+    print("Exception when calling LanguageTranslationApi->language_translation_translate_deu_to_eng: %s\n" % e)
